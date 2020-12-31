@@ -1,16 +1,18 @@
 import React from "react";
 
 const SearchBar = () => {
-  const onInputChange = (event) => {
-    console.log(event.target.value);
-  };
+  state = { term: "" };
 
   return (
     <div className=" ui segment ">
       <form className=" ui form">
         <div className="field">
           <label>User Input</label>
-          <input type="text" onChange={onInputChange} />
+          <input
+            type="text"
+            value={this.state.term}
+            onChange={(e) => this.setState({ term: e.target.value })}
+          />
         </div>
       </form>
     </div>
