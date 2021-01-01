@@ -4,20 +4,20 @@ import "./App.css";
 import SearchBar from "./components/searchBar/SearchBar";
 
 class App extends Component {
-  onSearchSubmit(term) {
-    axios
-      .get("https://api.unsplash.com/search/photos", {
-        params: { query: term },
-        headers: {
-          Authorization: process.env.REACT_APP_UNSPLASH_API_KEY,
-        },
-      })
-      // .then((response) => {
-      //   console.log(response);
-      // });
-      .then((response) => {
-        console.log(response.data.results);
-      });
+  async onSearchSubmit(term) {
+    const response = await axios.get("https://api.unsplash.com/search/photos", {
+      params: { query: term },
+      headers: {
+        Authorization: process.env.REACT_APP_UNSPLASH_API_KEY,
+      },
+    });
+    console.log(response.data.results);
+    // .then((response) => {
+    //   console.log(response);
+    // });
+    // .then((response) => {
+    //   console.log(response.data.results);
+    // });
   }
 
   render() {
