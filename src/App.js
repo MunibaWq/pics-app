@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import unsplash from "./api/unsplash";
 import "./App.css";
-import ImageList from "./components/ImageList";
+import ImageList from "./components/imageList/ImageList";
 import SearchBar from "./components/searchBar/SearchBar";
 
 class App extends Component {
