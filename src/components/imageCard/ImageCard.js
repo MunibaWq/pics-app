@@ -1,17 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const ImageCard = (props) => {
   const { description, urls } = props.image;
-  const imageRef = React.useRef();
+  const imageRef = useRef();
 
   useEffect(() => {
     console.log(imageRef.current);
     console.log(imageRef.current.clientHeight);
+    imageRef.current.addEventListener("load", setSpans);
     //   effect
     //   return () => {
     //       cleanup
     //   }
   });
+
+  const setSpans = () => {
+    console.log("setSpans " + imageRef.current.clientHeight);
+  };
 
   return (
     <div>
